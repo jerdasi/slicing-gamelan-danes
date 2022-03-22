@@ -1,5 +1,5 @@
 document.querySelectorAll('.gallery-item').forEach(element => {
-    let description = element.lastElementChild
+    let description = element.firstElementChild.lastElementChild
     element.addEventListener('mouseenter', () => {
         description.classList.remove('hidden')
     })
@@ -21,3 +21,13 @@ document.querySelector('.close-sidebar').addEventListener('click', () => {
 //     columns: '.grid-col',
 //     items: '.post'
 // })
+
+// Perhatikan Ini untuk Gallery dengan Jumlah Item Dikit
+FlexMasonry.init('.gallery-content', {
+    responsive: true,
+    breakpointCols: {
+        'min-width: 1024px': 4,
+        'min-width: 768px': 3,
+        'min-width: 640px': 2,
+    }
+});
