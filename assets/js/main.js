@@ -28,7 +28,7 @@ FlexMasonry.init('.gallery-content', {
     breakpointCols: {
         'min-width: 1024px': 4,
         'min-width: 768px': 3,
-        'min-width: 300px': 2,
+        'min-width: 640px': 2,
     },
     numCols: 2
 });
