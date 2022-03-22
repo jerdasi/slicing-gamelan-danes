@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFFBEF;
+}
+
+
+/* Color */
+
+.button-black {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.swiper-slide-active {
+    margin-top: 2%;
+}
+
+
+/* .swiper-button-next, .swiper-button-prev{
+    
+} */
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    background-color: rgba(0, 0, 0, .4);
+    padding: 1rem;
+    color: #fff !important;
+    border-radius: 0.5rem;
+    font-size: 12px !important;
+}
+
+.text-title {
+    background-color: rgba(0, 0, 0, .4);
+    color: #fff;
+}
+
+.menu li,
+li {
+    color: #6C6C6C;
+}
+
+.active {
+    color: #000;
+}
+
+.swiper-section {
+    height: 70vh;
+    width: 100vh;
+}
+
+.text-description::after {
+    content: '';
+    position: absolute;
+    width: 25%;
+    display: block;
+    height: 1px;
+    background-color: black;
+    bottom: -5px;
+}
+
+.hageng {
+    border: 5px solid #86BA0D;
+}
+
+.pakurmatan {
+    border: 5px solid #391B8C;
+}
+
+.detail-item {
+    margin: 0px 5px 5px 5px;
+    background-color: rgba(0, 0, 0, .4);
+    color: #fff;
+}
+
+.gambar-lh {
+    line-height: 12rem;
+}
+
+
+/* Colcade */
+
+* {
+    box-sizing: border-box;
+}
+
+.grid {
+    border: 1px solid;
+}
+
+.grid:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.grid-col {
+    float: left;
+    width: 49%;
+    margin-right: 2%;
+    background: #DDD;
+}
+
+.grid-col--4 {
+    margin-right: 0;
+}
+
+
+/* hide two middle */
+
+.grid-col--2,
+.grid-col--3 {
+    display: none;
+}
+
+@media ( min-width: 768px) {
+    .grid-col {
+        width: 32%;
+    }
+    .grid-col--2 {
+        display: block;
+    }
+}
+
+@media ( min-width: 1200px) {
+    .grid-col {
+        width: 23.5%;
+    }
+    .grid-col--2,
+    .grid-col--3 {
+        display: block;
+    }
+}
+
+.grid-item {
+    border: 1px solid black;
+    background: #09D;
+    margin-bottom: 20px;
+}
+
+.grid-item--a {
+    height: 80px;
+}
+
+.grid-item--b {
+    height: 140px;
+}
+
+.grid-item--c {
+    height: 300px;
+}
