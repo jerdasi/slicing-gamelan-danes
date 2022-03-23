@@ -88,3 +88,9 @@ li {
 
 
 /* Colcade */
+
+.gallery-content:after {
+    content: '';
+    display: block;
+    clear: both;
+}

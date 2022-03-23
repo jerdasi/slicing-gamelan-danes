@@ -1,5 +1,5 @@
 let filterMenu = ["category-filter-all", "newest"]
-let heightCard = [40, 52, 80]
+let heightCard = [52, 68, 80]
 
 // Animation for Hover Card
 const hoverCardInitialize = () => {
@@ -80,7 +80,7 @@ const buildCardGallery = (url, nama, jenis, tangal) => {
     let height = heightCard[getRandomInt(0, heightCard.length)]
     return `
     <div class="w-full px-2 md:px-4 pb-4 h-fit gallery-item relative">
-        <div class="item-picture w-full h-fit md:h-${height} hover:cursor-pointer rounded-lg hageng relative">
+        <div class="item-picture w-full h-fit md:h-${height} hover:cursor-pointer rounded-lg ${jenis} relative">
             <img src="${url}" alt="" class="w-full h-full object-cover">
             <div class="block md:absolute h-fit max-h-full bottom-0 w-full md:hidden">
                 <div class="detail-item p-2">
@@ -106,25 +106,34 @@ const getRandomInt = (min, max) => {
 
 console.log("ini belum ready")
 
+// async function fetchingData(){
+//     let response = await fetch("./_data/gamelan.json")
+//     response = await response.json()
+// }
+
 // Document Ready Loaded Full
-document.addEventListener("DOMContentLoaded", function() {
-    // Fetch Data
-    fetch('./_data/gamelan.json').then(response => {
-        return response.json()
-    }).then(data => {
-        data.forEach(element => {
-            document.querySelector(".gallery-content").insertAdjacentHTML("beforeend", buildCardGallery(element.url, element.nama, element.jenis, element.ditemukan))
-        })
-        hoverCardInitialize()
-        FlexMasonry.init('.gallery-content', {
-            responsive: true,
-            breakpointCols: {
-                'min-width: 1024px': 4,
-                'min-width: 640px': 2,
-            },
-            numCols: 2
-        });
+// document.addEventListener("DOMContentLoaded", function() {
+//     // Fetch Data
+
+
+
+
+// })
+
+fetch('./_data/gamelan.json').then(response => {
+    return response.json()
+}).then(data => {
+
+    data.forEach((element, index) => {
+        document.querySelector(".gallery-content").insertAdjacentHTML("beforeend", buildCardGallery(element.url, element.nama + index, element.jenis, element.ditemukan))
     })
-
-
-})
+    FlexMasonry.init('.gallery-content', {
+        responsive: true,
+        breakpointCols: {
+            'min-width: 1024px': 3,
+            'min-width: 640px': 2,
+        }
+    })
+}).then(
+    console.log("ini jalan")
+)
