@@ -134,6 +134,7 @@ fetch('./_data/gamelan.json').then(response => {
             'min-width: 640px': 2,
         }
     })
+    hoverCardInitialize()
 }).then(
     console.log("ini jalan")
 )
