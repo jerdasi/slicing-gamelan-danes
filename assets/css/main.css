@@ -13,6 +13,10 @@ body {
     background-color: #FFFBEF;
 }
 
+.complementary-color {
+    background-color: #BA830D;
+}
+
 
 /* Color */
 
@@ -69,13 +73,9 @@ li {
     bottom: -5px;
 }
 
-.hageng {
-    border: 5px solid #86BA0D;
-}
+.hageng {}
 
-.pakurmatan {
-    border: 5px solid #1F8AA6;
-}
+.pakurmatan {}
 
 .detail-item {
     background-color: rgba(0, 0, 0, .4);

@@ -1,5 +1,5 @@
 let filterMenu = ["category-filter-all", "newest"]
-let heightCard = [52, 68, 80]
+let heightCard = [72, 80, 88]
 
 // Animation for Hover Card
 const hoverCardInitialize = () => {
@@ -90,9 +90,9 @@ const buildCardGallery = (url, nama, jenis, tangal) => {
             </div>
         </div>
         <div class="item-description absolute md:static top-2 left-0 px-8 md:px-0 w-full flex items-center justify-between h-8">
-            <p class="mr-2 bg-white px-2 md:bg-transparent">${jenis}</p>
+            <p class="mr-2 bg-white px-2 md:px-0 md:bg-transparent">${jenis}</p>
             <div class="hidden md:block md:grow bg-black h-0.5"></div>
-            <p class="ml-2 bg-white px-2 md:bg-transparent">${tangal}</p>
+            <p class="ml-2 bg-white px-2 md:px-0 md:bg-transparent">${tangal}</p>
         </div>
     </div>
     `
