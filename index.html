@@ -17,15 +17,15 @@
     <title>Gamelan | Kapustakan</title>
 </head>
 
-<body class="text-lg overflow-x-hidden">
-    <header class="w-screen">
-        <nav class="flex h-24 items-center pl-4 pr-8 md:pl-16 md:pr-16 justify-between">
+<body class="md:text-lg overflow-x-hidden">
+    <header class="w-screen" id="navbar">
+        <nav class="flex h-24 border items-center pl-4 pr-8 md:pl-16 md:pr-16 justify-between">
             <div class="flex justify-between items-center w-full md:w-auto">
                 <div class="logo w-52 flex h-fit justify-between items-center">
-                    <img src="./assets/img/logo.png" alt="logo-img" class="w-16 h-16">
-                    <div class="logo-text grow flex flex-col justify-center">
-                        <h2 class="font-bold text-2xl text-right">Kapustakan</h2>
-                        <small class="text-right text-sm -mt-2">by Keraton Yogyakrta</small>
+                    <img src="./assets/img/logo.png" alt="logo-img" class="w-12 md:w-16 h-12 md:h-16">
+                    <div class="logo-text grow flex flex-col justify-center pl-2 md:pl-0">
+                        <h2 class="font-bold text-2xl md:text-right">Kapustakan</h2>
+                        <small class="md:text-right text-sm -mt-2">by Keraton Yogyakrta</small>
                     </div>
                 </div>
 
@@ -33,15 +33,16 @@
                     <i id="menu" class="fa fa-bars" onclick="toggleMenu(this)"></i>
                 </span>
             </div>
-            <ul class="menu w-1/2 gap-12 hidden md:flex">
-                <li><a href="#">Home</a></li>
-                <li><a href="#" class="active underline">Gallery</a></li>
-                <li><a href="#">Events</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Research</a></li>
+            <ul class="menu w-screen md:w-1/2 md:flex md:items-center z-[1000] md:z-auto hidden md:opacity-100 absolute md:static mt-24 md:mt-0 gap-12 shadow md:shadow-none top-0 left-0 block p-4">
+                <li class="mb-2 md:mb-0"><a href="#">Home</a></li>
+                <li class="mb-2 md:mb-0"><a href="#" class="active underline">Gallery</a></li>
+                <li class="mb-2 md:mb-0"><a href="#">Events</a></li>
+                <li class="mb-2 md:mb-0"><a href="#">About Us</a></li>
+                <li class="mb-2 md:mb-0"><a href="#">Research</a></li>
 
-                <div class="search">
-                    <i class="fa-solid fa-magnifying-glass text-2xl cursor-pointer"></i>
+                <div class="search flex md:block my-4">
+                    <i class="fa-solid fa-magnifying-glass text-2xl cursor-pointer mr-2 md:mr-0"></i>
+                    <input type="text" name="" id="" class="grow bg-inherit border rounded-lg md:hidden" placeholder="Search Here">
                 </div>
             </ul>
         </nav>
@@ -57,15 +58,15 @@
             <section class="category mt-2 mb-8 text-xl">
                 <h1 class="font-bold text-2xl mb-2">Category</h1>
                 <div>
-                    <input type="checkbox" name="all-collections" id="category-filter-all">
+                    <input type="radio" name="category" id="category-filter-all" checked>
                     <label for="category-filter-all">All Collections</label>
                 </div>
                 <div>
-                    <input type="checkbox" name="all-collections" id="category-filter-hageng">
+                    <input type="radio" name="category" id="category-filter-hageng">
                     <label for="category-filter-hageng">Gamelan Hageng</label>
                 </div>
                 <div>
-                    <input type="checkbox" name="all-collections" id="category-filter-pakurmatan">
+                    <input type="radio" name="category" id="category-filter-pakurmatan">
                     <label for="category-filter-pakurmatan">Gamelan Pakurmatan</label>
                 </div>
             </section>
@@ -73,63 +74,64 @@
             <section class="category mt-2 mb-8 text-xl">
                 <h1 class="font-bold text-2xl mb-2">Sort</h1>
                 <div>
-                    <input type="radio" name="all-collections" id="sort oldest" name="filter-sort">
-                    <label for="sort oldest">Gamelan Oldest</label>
+                    <input type="radio" id="newest" name="filter-sort" checked>
+                    <label for="newest">Gamelan Newest</label>
                 </div>
                 <div>
-                    <input type="radio" name="all-collections" id="sort newest" name="filter-sort">
-                    <label for="sort newest">Gamelan Newest</label>
+                    <input type="radio" id="oldest" name="filter-sort">
+                    <label for="oldest">Gamelan Oldest</label>
                 </div>
                 <div>
-                    <input type="radio" name="all-collections" id="sort most" name="filter-sort">
-                    <label for="sort most">Gamelan w/ The Most Instruments</label>
+                    <input type="radio" id="most" name="filter-sort">
+                    <label for="most">Gamelan w/ The Most Instruments</label>
                 </div>
                 <div>
-                    <input type="radio" name="all-collections" id="sort fewest" name="filter-sort">
-                    <label for="sort fewest">Gamelan w/ The Fewest Instruments</label>
+                    <input type="radio" id="fewest" name="filter-sort">
+                    <label for="fewest">Gamelan w/ The Fewest Instruments</label>
                 </div>
             </section>
         </div>
 
         <div class="footer-sidebar grow flex items-end">
-            <button class="font-bold button-black  w-full p-2 rounded-lg">Save Filter Settings</button>
+            <button class="font-bold button-black  w-full p-2 rounded-lg">Apply Filter Settings</button>
         </div>
 
     </section>
 
-    <section class="swiper-section w-screen">
+    <!-- Swiper -->
+    <section class="swiper-section h-[40vh] md:h-[70vh] w-screen">
         <div class="swiper h-full w-full">
             <div class="swiper-wrapper">
-                <div class="swiper-slide w-3/6 h-5/6 border relative rounded-2xl">
+                <div class="swiper-slide w-5/6 md:w-3/6 h-5/6 border relative rounded-2xl">
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
 
                     <img src="./assets/img/KKPR-20220215121712000000.jpg" alt="" class="h-full w-full object-cover rounded-2xl">
-                    <div class="w-full h-24 absolute bottom-0 flex items-center justify-center">
+                    <div class="w-full h-fit md:h-24 absolute bottom-0 flex items-center justify-center">
                         <div class="w-5/6 h-full flex justify-center items-center text-title mx-4 rounded-t-2xl">
-                            <h1 class="text-6xl font-bold tracking-tight">GAMELAN</h1>
+                            <h1 class="text-xl md:text-6xl p-2 md:p-0 font-bold tracking-wide md:tracking-tight">GAMELAN</h1>
                         </div>
                     </div>
                 </div>
-                <div class="swiper-slide w-3/6 h-5/6 border relative rounded-2xl">
+                <div class="swiper-slide w-5/6 md:w-3/6 h-5/6 border relative rounded-2xl">
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
 
                     <img src="./assets/img/gamelan.jpg" alt="" class="h-full w-full object-cover rounded-2xl">
-                    <div class="w-full h-24 absolute bottom-0 flex items-center justify-center">
+                    <div class="w-full h-fit md:h-24 absolute bottom-0 flex items-center justify-center">
                         <div class="w-5/6 h-full flex justify-center items-center text-title mx-4 rounded-t-2xl">
-                            <h1 class="text-6xl font-bold tracking-tight">GAMELAN</h1>
+                            <h1 class="text-xl md:text-6xl p-2 md:p-0 font-bold tracking-wide md:tracking-tight">GAMELAN</h1>
                         </div>
                     </div>
                 </div>
-                <div class="swiper-slide w-3/6 h-5/6 border relative rounded-2xl">
+                <div class="swiper-slide w-5/6 md:w-3/6 h-5/6 border relative rounded-2xl">
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
 
                     <img src="./assets/img/gamelan.jpg" alt="" class="h-full w-full object-cover rounded-2xl">
-                    <div class="w-full h-24 absolute bottom-0 flex items-center justify-center">
+                    <div class="w-full h-fit md:h-24 absolute bottom-0 flex items-center justify-center">
                         <div class="w-5/6 h-full flex justify-center items-center text-title mx-4 rounded-t-2xl">
-                            <h1 class="text-6xl font-bold tracking-tight">GAMELAN</h1>
+                            <h1 class="text-xl md:text-6xl p-2 md:p-0 font-bold tracking-wide md:tracking-tight">GAMELAN</h1>
                         </div>
                     </div>
                 </div>
@@ -167,753 +169,8 @@
                 </ul>
             </section>
 
-            <!-- <section class="gallery-content h-fit columns-4">
-                <div class="w-full h-fit relative gallery-item">
-                    <img src="./assets/img/KKPR-20220215121712000000.jpg" alt="" class="w-full h-96 object-cover hover:cursor-pointer rounded-lg hageng">
-                    <div class="item-description flex items-center justify-between h-8">
-                        <p class="mr-2">Hageng1</p>
-                        <div class="hidden md:block md:grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                    <div class="absolute h-fit max-h-full w-full bottom-8 hidden">
-                        <div class="detail-item p-2">
-                            <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                            <p class="text-right cursor-pointer">click for more info</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full h-fit relative gallery-item">
-                    <img src="./assets/img/gamelan.jpg" alt="" class="w-full h-64 object-cover hover:cursor-pointer rounded-lg pakurmatan">
-                    <div class="item-description flex items-center justify-between">
-                        <p class="mr-2">Pakurmatan2</p>
-                        <div class="grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                    <div class="absolute h-fit max-h-full w-full bottom-8 hidden">
-                        <div class="detail-item p-2">
-                            <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                            <p class="text-right cursor-pointer">click for more info</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full h-fit relative gallery-item">
-                    <img src="./assets/img/KKPR-20220215121712000000.jpg" alt="" class="w-full h-44 object-cover hover:object-contain rounded-lg hageng">
-                    <div class="item-description flex items-center justify-between">
-                        <p class="mr-2">Hageng3</p>
-                        <div class="grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                    <div class="absolute h-fit max-h-full w-full bottom-8 hidden">
-                        <div class="detail-item p-2">
-                            <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                            <p class="text-right cursor-pointer">click for more info</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full h-fit relative gallery-item">
-                    <img src="./assets/img/gamelan.jpg" alt="" class="w-full h-68 object-cover hover:object-contain rounded-lg hageng">
-                    <div class="item-description flex items-center justify-between">
-                        <p class="mr-2">Hageng</p>
-                        <div class="grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                    <div class="absolute h-fit max-h-full w-full bottom-8 hidden">
-                        <div class="detail-item p-2">
-                            <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                            <p class="text-right cursor-pointer">click for more info</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full h-fit relative gallery-item">
-                    <img src="./assets/img/KKPR-20220215121712000000.jpg" alt="" class="w-full h-52 object-cover hover:object-contain rounded-lg pakurmatan">
-                    <div class="item-description flex items-center justify-between">
-                        <p class="mr-2">Pakurmatan</p>
-                        <div class="grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                    <div class="absolute h-fit max-h-full w-full bottom-8 hidden">
-                        <div class="detail-item p-2">
-                            <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                            <p class="text-right cursor-pointer">click for more info</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full h-fit relative gallery-item">
-                    <img src="./assets/img/gamelan.jpg" alt="" class="w-full h-64 object-cover hover:object-contain rounded-lg pakurmatan">
-                    <div class="item-description flex items-center justify-between">
-                        <p class="mr-2">Pakurmatan</p>
-                        <div class="grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                    <div class="absolute h-fit max-h-full w-full bottom-8 hidden">
-                        <div class="detail-item p-2">
-                            <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                            <p class="text-right cursor-pointer">click for more info</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full h-fit relative gallery-item">
-                    <img src="./assets/img/KKPR-20220215121712000000.jpg" alt="" class="w-full h-60 object-cover hover:object-contain rounded-lg hageng">
-                    <div class="item-description flex items-center justify-between">
-                        <p class="mr-2">Hageng</p>
-                        <div class="grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                    <div class="absolute h-fit max-h-full w-full bottom-8 hidden">
-                        <div class="detail-item p-2">
-                            <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                            <p class="text-right cursor-pointer">click for more info</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full h-fit relative gallery-item">
-                    <img src="./assets/img/gamelan.jpg" alt="" class="w-full h-56 object-cover hover:object-contain rounded-lg hageng">
-                    <div class="item-description flex items-center justify-between">
-                        <p class="mr-2">Hageng</p>
-                        <div class="grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                    <div class="absolute h-fit max-h-full w-full bottom-8 hidden">
-                        <div class="detail-item p-2">
-                            <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                            <p class="text-right cursor-pointer">click for more info</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full h-fit relative gallery-item">
-                    <img src="./assets/img/KKPR-20220215121712000000.jpg" alt="" class="w-full h-48 object-cover hover:object-contain rounded-lg hageng">
-                    <div class="item-description flex items-center justify-between">
-                        <p class="mr-2">Hageng</p>
-                        <div class="grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                    <div class="absolute h-fit max-h-full w-full bottom-8 hidden">
-                        <div class="detail-item p-2">
-                            <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                            <p class="text-right cursor-pointer">click for more info</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full h-fit relative gallery-item">
-                    <img src="./assets/img/gamelan.jpg" alt="" class="w-full h-52 object-cover hover:object-contain rounded-lg pakurmatan">
-                    <div class="item-description flex items-center justify-between">
-                        <p class="mr-2">Pakurmatan</p>
-                        <div class="grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                    <div class="absolute h-fit max-h-full w-full bottom-8 hidden">
-                        <div class="detail-item p-2">
-                            <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                            <p class="text-right cursor-pointer">click for more info</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full h-fit relative gallery-item">
-                    <img src="./assets/img/KKPR-20220215121712000000.jpg" alt="" class="w-full h-44 object-cover hover:object-contain rounded-lg hageng">
-                    <div class="item-description flex items-center justify-between">
-                        <p class="mr-2">Hageng</p>
-                        <div class="grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                    <div class="absolute h-fit max-h-full w-full bottom-8 hidden">
-                        <div class="detail-item p-2">
-                            <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                            <p class="text-right cursor-pointer">click for more info</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full h-fit relative gallery-item">
-                    <img src="./assets/img/gamelan.jpg" alt="" class="w-full h-64 object-cover hover:object-contain rounded-lg hageng">
-                    <div class="item-description flex items-center justify-between">
-                        <p class="mr-2">Hageng</p>
-                        <div class="grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                    <div class="absolute h-fit max-h-full w-full bottom-8 hidden">
-                        <div class="detail-item p-2">
-                            <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                            <p class="text-right cursor-pointer">click for more info</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full h-fit relative gallery-item">
-                    <img src="./assets/img/KKPR-20220215121712000000.jpg" alt="" class="w-full h-52 object-cover hover:object-contain rounded-lg pakurmatan">
-                    <div class="item-description flex items-center justify-between">
-                        <p class="mr-2">Pakurmatan</p>
-                        <div class="grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                    <div class="absolute h-fit max-h-full w-full bottom-8 hidden">
-                        <div class="detail-item p-2">
-                            <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                            <p class="text-right cursor-pointer">click for more info</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full h-fit relative gallery-item">
-                    <img src="./assets/img/gamelan.jpg" alt="" class="w-full h-64 object-cover hover:object-contain rounded-lg pakurmatan">
-                    <div class="item-description flex items-center justify-between">
-                        <p class="mr-2">Pakurmatan</p>
-                        <div class="grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                    <div class="absolute h-fit max-h-full w-full bottom-8 hidden">
-                        <div class="detail-item p-2">
-                            <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                            <p class="text-right cursor-pointer">click for more info</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full h-fit relative gallery-item">
-                    <img src="./assets/img/KKPR-20220215121712000000.jpg" alt="" class="w-full h-60 object-cover hover:object-contain rounded-lg hageng">
-                    <div class="item-description flex items-center justify-between">
-                        <p class="mr-2">Hageng</p>
-                        <div class="grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                    <div class="absolute h-fit max-h-full w-full bottom-8 hidden">
-                        <div class="detail-item p-2">
-                            <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                            <p class="text-right cursor-pointer">click for more info</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full h-fit relative gallery-item">
-                    <img src="./assets/img/gamelan.jpg" alt="" class="w-full h-56 object-cover hover:object-contain rounded-lg hageng">
-                    <div class="item-description flex items-center justify-between">
-                        <p class="mr-2">Hageng</p>
-                        <div class="grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                    <div class="absolute h-fit max-h-full w-full bottom-8 hidden">
-                        <div class="detail-item p-2">
-                            <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                            <p class="text-right cursor-pointer">click for more info</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full h-fit relative gallery-item">
-                    <img src="./assets/img/KKPR-20220215121712000000.jpg" alt="" class="w-full h-48 object-cover hover:object-contain rounded-lg hageng">
-                    <div class="item-description flex items-center justify-between">
-                        <p class="mr-2">Hageng</p>
-                        <div class="grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                    <div class="absolute h-fit max-h-full w-full bottom-8 hidden">
-                        <div class="detail-item p-2">
-                            <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                            <p class="text-right cursor-pointer">click for more info</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full h-fit relative gallery-item">
-                    <img src="./assets/img/gamelan.jpg" alt="" class="w-full h-52 object-cover hover:object-contain rounded-lg pakurmatan">
-                    <div class="item-description flex items-center justify-between">
-                        <p class="mr-2">Pakurmatan</p>
-                        <div class="grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                    <div class="absolute h-fit max-h-full w-full bottom-8 hidden">
-                        <div class="detail-item p-2">
-                            <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                            <p class="text-right cursor-pointer">click for more info</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full h-fit relative gallery-item">
-                    <img src="./assets/img/KKPR-20220215121712000000.jpg" alt="" class="w-full h-44 object-cover hover:object-contain rounded-lg hageng">
-                    <div class="item-description flex items-center justify-between">
-                        <p class="mr-2">Hageng</p>
-                        <div class="grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                    <div class="absolute h-fit max-h-full w-full bottom-8 hidden">
-                        <div class="detail-item p-2">
-                            <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                            <p class="text-right cursor-pointer">click for more info</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full h-fit relative gallery-item">
-                    <img src="./assets/img/gamelan.jpg" alt="" class="w-full h-48 object-cover hover:object-contain rounded-lg hageng">
-                    <div class="item-description flex items-center justify-between">
-                        <p class="mr-2">Hageng</p>
-                        <div class="grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                    <div class="absolute h-fit max-h-full w-full bottom-8 hidden">
-                        <div class="detail-item p-2">
-                            <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                            <p class="text-right cursor-pointer">click for more info</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full h-fit relative gallery-item">
-                    <img src="./assets/img/KKPR-20220215121712000000.jpg" alt="" class="w-full h-52 object-cover hover:object-contain rounded-lg pakurmatan">
-                    <div class="item-description flex items-center justify-between">
-                        <p class="mr-2">Pakurmatan</p>
-                        <div class="grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                    <div class="absolute h-fit max-h-full w-full bottom-8 hidden">
-                        <div class="detail-item p-2">
-                            <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                            <p class="text-right cursor-pointer">click for more info</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full h-fit relative gallery-item">
-                    <img src="./assets/img/gamelan.jpg" alt="" class="w-full h-64 object-cover hover:object-contain rounded-lg pakurmatan">
-                    <div class="item-description flex items-center justify-between">
-                        <p class="mr-2">Pakurmatan</p>
-                        <div class="grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                    <div class="absolute h-fit max-h-full w-full bottom-8 hidden">
-                        <div class="detail-item p-2">
-                            <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                            <p class="text-right cursor-pointer">click for more info</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full h-fit relative gallery-item">
-                    <img src="./assets/img/KKPR-20220215121712000000.jpg" alt="" class="w-full h-60 object-cover hover:object-contain rounded-lg hageng">
-                    <div class="item-description flex items-center justify-between">
-                        <p class="mr-2">Hageng</p>
-                        <div class="grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                    <div class="absolute h-fit max-h-full w-full bottom-8 hidden">
-                        <div class="detail-item p-2">
-                            <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                            <p class="text-right cursor-pointer">click for more info</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full h-fit relative gallery-item">
-                    <img src="./assets/img/gamelan.jpg" alt="" class="w-full h-56 object-cover hover:object-contain rounded-lg hageng">
-                    <div class="item-description flex items-center justify-between">
-                        <p class="mr-2">Hageng</p>
-                        <div class="grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                    <div class="absolute h-fit max-h-full w-full bottom-8 hidden">
-                        <div class="detail-item p-2">
-                            <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                            <p class="text-right cursor-pointer">click for more info</p>
-                        </div>
-                    </div>
-                </div>
-            </section> -->
-
             <section class="gallery-content h-auto w-full md:pl-16 pr-4 md:pr-16">
-                <div class="w-full px-2 md:px-4 pb-4 h-fit gallery-item">
-                    <div class="item-picture w-full h-fit md:h-60 object-cover hover:cursor-pointer rounded-lg hageng relative">
-                        <img src="./assets/img/KKPR-20220215121712000000.jpg" alt="" class="w-full h-full object-cover">
-                        <div class="block md:absolute h-fit max-h-full bottom-0 w-full md:hidden">
-                            <div class="detail-item p-2">
-                                <h1 class="text-xl md:text-3xl font-bold md:text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                                <p class="hidden md:block text-right cursor-pointer">click for more info</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-description flex items-center justify-between h-8">
-                        <p class="mr-2">Hageng1</p>
-                        <div class="hidden md:block md:grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                </div>
 
-                <div class="w-full px-2 md:px-4 pb-4 h-fit gallery-item">
-                    <div class="item-picture w-full h-48 md:h-72 object-cover hover:cursor-pointer rounded-lg pakurmatan relative">
-                        <img src="./assets/img/gamelan.jpg" alt="" class="w-full h-full object-cover">
-                        <div class="absolute h-fit max-h-full bottom-0 w-full hidden">
-                            <div class="detail-item p-2">
-                                <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                                <p class="text-right cursor-pointer">click for more info</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-description flex items-center justify-between h-8">
-                        <p class="mr-2">Pakurmatan1</p>
-                        <div class="hidden md:block md:grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                </div>
-
-                <div class="w-full px-2 md:px-4 pb-4 h-fit gallery-item">
-                    <div class="item-picture w-full h-48 md:h-72 object-cover hover:cursor-pointer rounded-lg hageng relative">
-                        <img src="./assets/img/KKPR-20220215121712000000.jpg" alt="" class="w-full h-full object-cover">
-                        <div class="absolute h-fit max-h-full bottom-0 w-full hidden">
-                            <div class="detail-item p-2">
-                                <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                                <p class="text-right cursor-pointer">click for more info</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-description flex items-center justify-between h-8">
-                        <p class="mr-2">Hageng2</p>
-                        <div class="hidden md:block md:grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                </div>
-
-                <div class="w-full px-2 md:px-4 pb-4 h-fit gallery-item">
-                    <div class="item-picture w-full h-48 md:h-96 object-cover hover:cursor-pointer rounded-lg pakurmatan relative">
-                        <img src="./assets/img/gamelan.jpg" alt="" class="w-full h-full object-cover">
-                        <div class="absolute h-fit max-h-full bottom-0 w-full hidden">
-                            <div class="detail-item p-2">
-                                <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                                <p class="text-right cursor-pointer">click for more info</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-description flex items-center justify-between h-8">
-                        <p class="mr-2">Pakurmatan2</p>
-                        <div class="hidden md:block md:grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                </div>
-
-                <div class="w-full px-2 md:px-4 pb-4 h-fit gallery-item">
-                    <div class="item-picture w-full h-48 md:h-48 object-cover hover:cursor-pointer rounded-lg hageng relative">
-                        <img src="./assets/img/KKPR-20220215121712000000.jpg" alt="" class="w-full h-full object-cover">
-                        <div class="absolute h-fit max-h-full bottom-0 w-full hidden">
-                            <div class="detail-item p-2">
-                                <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                                <p class="text-right cursor-pointer">click for more info</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-description flex items-center justify-between h-8">
-                        <p class="mr-2">Hageng1</p>
-                        <div class="hidden md:block md:grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                </div>
-
-                <div class="w-full px-2 md:px-4 pb-4 h-fit gallery-item">
-                    <div class="item-picture w-full h-48 md:h-64 object-cover hover:cursor-pointer rounded-lg pakurmatan relative">
-                        <img src="./assets/img/gamelan.jpg" alt="" class="w-full h-full object-cover">
-                        <div class="absolute h-fit max-h-full bottom-0 w-full hidden">
-                            <div class="detail-item p-2">
-                                <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                                <p class="text-right cursor-pointer">click for more info</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-description flex items-center justify-between h-8">
-                        <p class="mr-2">Hageng1</p>
-                        <div class="hidden md:block md:grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                </div>
-
-                <div class="w-full px-2 md:px-4 pb-4 h-fit gallery-item">
-                    <div class="item-picture w-full h-48 md:h-68 object-cover hover:cursor-pointer rounded-lg hageng relative">
-                        <img src="./assets/img/KKPR-20220215121712000000.jpg" alt="" class="w-full h-full object-cover">
-                        <div class="absolute h-fit max-h-full bottom-0 w-full hidden">
-                            <div class="detail-item p-2">
-                                <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                                <p class="text-right cursor-pointer">click for more info</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-description flex items-center justify-between h-8">
-                        <p class="mr-2">Hageng1</p>
-                        <div class="hidden md:block md:grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                </div>
-
-                <div class="w-full px-2 md:px-4 pb-4 h-fit gallery-item">
-                    <div class="item-picture w-full h-48 md:h-80 object-cover hover:cursor-pointer rounded-lg pakurmatan relative">
-                        <img src="./assets/img/gamelan.jpg" alt="" class="w-full h-full object-cover">
-                        <div class="absolute h-fit max-h-full bottom-0 w-full hidden">
-                            <div class="detail-item p-2">
-                                <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                                <p class="text-right cursor-pointer">click for more info</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-description flex items-center justify-between h-8">
-                        <p class="mr-2">Hageng1</p>
-                        <div class="hidden md:block md:grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                </div>
-
-                <div class="w-full px-2 md:px-4 pb-4 h-fit gallery-item">
-                    <div class="item-picture w-full h-48 md:h-60 object-cover hover:cursor-pointer rounded-lg hageng relative">
-                        <img src="./assets/img/KKPR-20220215121712000000.jpg" alt="" class="w-full h-full object-cover">
-                        <div class="absolute h-fit max-h-full bottom-0 w-full hidden">
-                            <div class="detail-item p-2">
-                                <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                                <p class="text-right cursor-pointer">click for more info</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-description flex items-center justify-between h-8">
-                        <p class="mr-2">Hageng1</p>
-                        <div class="hidden md:block md:grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                </div>
-
-                <div class="w-full px-2 md:px-4 pb-4 h-fit gallery-item">
-                    <div class="item-picture w-full h-48 md:h-72 object-cover hover:cursor-pointer rounded-lg pakurmatan relative">
-                        <img src="./assets/img/gamelan.jpg" alt="" class="w-full h-full object-cover">
-                        <div class="absolute h-fit max-h-full bottom-0 w-full hidden">
-                            <div class="detail-item p-2">
-                                <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                                <p class="text-right cursor-pointer">click for more info</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-description flex items-center justify-between h-8">
-                        <p class="mr-2">Hageng1</p>
-                        <div class="hidden md:block md:grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                </div>
-
-                <div class="w-full px-2 md:px-4 pb-4 h-fit gallery-item">
-                    <div class="item-picture w-full h-48 md:h-72 object-cover hover:cursor-pointer rounded-lg hageng relative">
-                        <img src="./assets/img/KKPR-20220215121712000000.jpg" alt="" class="w-full h-full object-cover">
-                        <div class="absolute h-fit max-h-full bottom-0 w-full hidden">
-                            <div class="detail-item p-2">
-                                <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                                <p class="text-right cursor-pointer">click for more info</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-description flex items-center justify-between h-8">
-                        <p class="mr-2">Hageng1</p>
-                        <div class="hidden md:block md:grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                </div>
-
-                <div class="w-full px-2 md:px-4 pb-4 h-fit gallery-item">
-                    <div class="item-picture w-full h-48 md:h-96 object-cover hover:cursor-pointer rounded-lg pakurmatan relative">
-                        <img src="./assets/img/gamelan.jpg" alt="" class="w-full h-full object-cover">
-                        <div class="absolute h-fit max-h-full bottom-0 w-full hidden">
-                            <div class="detail-item p-2">
-                                <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                                <p class="text-right cursor-pointer">click for more info</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-description flex items-center justify-between h-8">
-                        <p class="mr-2">Hageng1</p>
-                        <div class="hidden md:block md:grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                </div>
-
-                <div class="w-full px-2 md:px-4 pb-4 h-fit gallery-item">
-                    <div class="item-picture w-full h-48 md:h-48 object-cover hover:cursor-pointer rounded-lg hageng relative">
-                        <img src="./assets/img/KKPR-20220215121712000000.jpg" alt="" class="w-full h-full object-cover">
-                        <div class="absolute h-fit max-h-full bottom-0 w-full hidden">
-                            <div class="detail-item p-2">
-                                <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                                <p class="text-right cursor-pointer">click for more info</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-description flex items-center justify-between h-8">
-                        <p class="mr-2">Hageng1</p>
-                        <div class="hidden md:block md:grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                </div>
-
-                <div class="w-full px-2 md:px-4 pb-4 h-fit gallery-item">
-                    <div class="item-picture w-full h-48 md:h-64 object-cover hover:cursor-pointer rounded-lg pakurmatan relative">
-                        <img src="./assets/img/gamelan.jpg" alt="" class="w-full h-full object-cover">
-                        <div class="absolute h-fit max-h-full bottom-0 w-full hidden">
-                            <div class="detail-item p-2">
-                                <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                                <p class="text-right cursor-pointer">click for more info</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-description flex items-center justify-between h-8">
-                        <p class="mr-2">Hageng1</p>
-                        <div class="hidden md:block md:grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                </div>
-
-                <div class="w-full px-2 md:px-4 pb-4 h-fit gallery-item">
-                    <div class="item-picture w-full h-48 md:h-68 object-cover hover:cursor-pointer rounded-lg hageng relative">
-                        <img src="./assets/img/KKPR-20220215121712000000.jpg" alt="" class="w-full h-full object-cover">
-                        <div class="absolute h-fit max-h-full bottom-0 w-full hidden">
-                            <div class="detail-item p-2">
-                                <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                                <p class="text-right cursor-pointer">click for more info</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-description flex items-center justify-between h-8">
-                        <p class="mr-2">Hageng1</p>
-                        <div class="hidden md:block md:grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                </div>
-
-                <div class="w-full px-2 md:px-4 pb-4 h-fit gallery-item">
-                    <div class="item-picture w-full h-48 md:h-80 object-cover hover:cursor-pointer rounded-lg pakurmatan relative">
-                        <img src="./assets/img/gamelan.jpg" alt="" class="w-full h-full object-cover">
-                        <div class="absolute h-fit max-h-full bottom-0 w-full hidden">
-                            <div class="detail-item p-2">
-                                <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                                <p class="text-right cursor-pointer">click for more info</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-description flex items-center justify-between h-8">
-                        <p class="mr-2">Hageng1</p>
-                        <div class="hidden md:block md:grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                </div>
-
-                <div class="w-full px-2 md:px-4 pb-4 h-fit gallery-item">
-                    <div class="item-picture w-full h-48 md:h-60 object-cover hover:cursor-pointer rounded-lg hageng relative">
-                        <img src="./assets/img/KKPR-20220215121712000000.jpg" alt="" class="w-full h-full object-cover">
-                        <div class="absolute h-fit max-h-full bottom-0 w-full hidden">
-                            <div class="detail-item p-2">
-                                <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                                <p class="text-right cursor-pointer">click for more info</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-description flex items-center justify-between h-8">
-                        <p class="mr-2">Hageng1</p>
-                        <div class="hidden md:block md:grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                </div>
-
-                <div class="w-full px-2 md:px-4 pb-4 h-fit gallery-item">
-                    <div class="item-picture w-full h-48 md:h-72 object-cover hover:cursor-pointer rounded-lg pakurmatan relative">
-                        <img src="./assets/img/gamelan.jpg" alt="" class="w-full h-full object-cover">
-                        <div class="absolute h-fit max-h-full bottom-0 w-full hidden">
-                            <div class="detail-item p-2">
-                                <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                                <p class="text-right cursor-pointer">click for more info</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-description flex items-center justify-between h-8">
-                        <p class="mr-2">Hageng1</p>
-                        <div class="hidden md:block md:grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                </div>
-
-                <div class="w-full px-2 md:px-4 pb-4 h-fit gallery-item">
-                    <div class="item-picture w-full h-48 md:h-72 object-cover hover:cursor-pointer rounded-lg hageng relative">
-                        <img src="./assets/img/KKPR-20220215121712000000.jpg" alt="" class="w-full h-full object-cover">
-                        <div class="absolute h-fit max-h-full bottom-0 w-full hidden">
-                            <div class="detail-item p-2">
-                                <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                                <p class="text-right cursor-pointer">click for more info</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-description flex items-center justify-between h-8">
-                        <p class="mr-2">Hageng1</p>
-                        <div class="hidden md:block md:grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                </div>
-
-                <div class="w-full px-2 md:px-4 pb-4 h-fit gallery-item">
-                    <div class="item-picture w-full h-48 md:h-96 object-cover hover:cursor-pointer rounded-lg pakurmatan relative">
-                        <img src="./assets/img/gamelan.jpg" alt="" class="w-full h-full object-cover">
-                        <div class="absolute h-fit max-h-full bottom-0 w-full hidden">
-                            <div class="detail-item p-2">
-                                <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                                <p class="text-right cursor-pointer">click for more info</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-description flex items-center justify-between h-8">
-                        <p class="mr-2">Hageng1</p>
-                        <div class="hidden md:block md:grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                </div>
-
-                <div class="w-full px-2 md:px-4 pb-4 h-fit gallery-item">
-                    <div class="item-picture w-full h-48 md:h-48 object-cover hover:cursor-pointer rounded-lg hageng relative">
-                        <img src="./assets/img/KKPR-20220215121712000000.jpg" alt="" class="w-full h-full object-cover">
-                        <div class="absolute h-fit max-h-full bottom-0 w-full hidden">
-                            <div class="detail-item p-2">
-                                <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                                <p class="text-right cursor-pointer">click for more info</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-description flex items-center justify-between h-8">
-                        <p class="mr-2">Hageng1</p>
-                        <div class="hidden md:block md:grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                </div>
-
-                <div class="w-full px-2 md:px-4 pb-4 h-fit gallery-item">
-                    <div class="item-picture w-full h-48 md:h-64 object-cover hover:cursor-pointer rounded-lg pakurmatan relative">
-                        <img src="./assets/img/gamelan.jpg" alt="" class="w-full h-full object-cover">
-                        <div class="absolute h-fit max-h-full bottom-0 w-full hidden">
-                            <div class="detail-item p-2">
-                                <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                                <p class="text-right cursor-pointer">click for more info</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-description flex items-center justify-between h-8">
-                        <p class="mr-2">Hageng1</p>
-                        <div class="hidden md:block md:grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                </div>
-
-                <div class="w-full px-2 md:px-4 pb-4 h-fit gallery-item">
-                    <div class="item-picture w-full h-48 md:h-68 object-cover hover:cursor-pointer rounded-lg hageng relative">
-                        <img src="./assets/img/KKPR-20220215121712000000.jpg" alt="" class="w-full h-full object-cover">
-                        <div class="absolute h-fit max-h-full bottom-0 w-full hidden">
-                            <div class="detail-item p-2">
-                                <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                                <p class="text-right cursor-pointer">click for more info</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-description flex items-center justify-between h-8">
-                        <p class="mr-2">Hageng1</p>
-                        <div class="hidden md:block md:grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                </div>
-
-                <div class="w-full px-2 md:px-4 pb-4 h-fit gallery-item">
-                    <div class="item-picture w-full h-48 md:h-80 object-cover hover:cursor-pointer rounded-lg pakurmatan relative">
-                        <img src="./assets/img/gamelan.jpg" alt="" class="w-full h-full object-cover">
-                        <div class="absolute h-fit max-h-full bottom-0 w-full hidden">
-                            <div class="detail-item p-2">
-                                <h1 class="text-3xl font-bold text-center">Gamelan Kanjeng Kyahi Pusparana</h1>
-                                <p class="text-right cursor-pointer">click for more info</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-description flex items-center justify-between h-8">
-                        <p class="mr-2">Hageng1</p>
-                        <div class="hidden md:block md:grow bg-black h-0.5"></div>
-                        <p class="ml-2">16 - 02 - 2022</p>
-                    </div>
-                </div>
             </section>
         </section>
     </main>
@@ -953,7 +210,7 @@
         </div>
 
         <div class="absolute top-10 right-10 w-16 h-16 border flex items-center justify-center block md:hidden rounded-full bg-black cursor-pointer shadow-lg animate-bounce" title="Go To Top">
-            <i class="fa-solid fa-arrow-up text-white text-3xl"></i>
+            <a href="#navbar"><i class="fa-solid fa-arrow-up text-white text-3xl"></i></a>
         </div>
         <div class="copyright-footer basis-full w-full flex justify-between mt-8 md:px-16">
             <p>© 2021 Kapustakaan Kraton Ngayogyakarta Hadiningrat — All rights reserved</p>
