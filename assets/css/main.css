@@ -78,9 +78,13 @@ li {
     bottom: -5px;
 }
 
-.hageng {}
+.hageng {
+    border: 5px solid #391B8C;
+}
 
-.pakurmatan {}
+.pakurmatan {
+    border: 5px solid #1F8AA6;
+}
 
 .detail-item {
     background-color: rgba(0, 0, 0, .4);

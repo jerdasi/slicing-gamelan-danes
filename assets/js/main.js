@@ -80,7 +80,7 @@ const buildCardGallery = (url, nama, jenis, tangal) => {
     let height = heightCard[getRandomInt(0, heightCard.length)]
     return `
     <div class="w-full px-2 md:px-4 pb-4 h-fit gallery-item relative">
-        <div class="item-picture w-full h-fit md:h-${height} hover:cursor-pointer rounded-lg ${jenis} relative">
+        <div class="item-picture w-full h-fit md:h-${height} hover:cursor-pointer ${jenis} relative">
             <img src="${url}" alt="" class="w-full h-full object-cover">
             <div class="block md:absolute h-fit max-h-full bottom-0 w-full md:hidden">
                 <div class="detail-item p-2">
