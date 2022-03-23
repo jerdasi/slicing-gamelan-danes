@@ -17,6 +17,11 @@ body {
     background-color: #BA830D;
 }
 
+.font-complementary {
+    color: #FFF;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 
 /* Color */
 
@@ -79,7 +84,6 @@ li {
 
 .detail-item {
     background-color: rgba(0, 0, 0, .4);
-    color: #fff;
 }
 
 .gambar-lh {

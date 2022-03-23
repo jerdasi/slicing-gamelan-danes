@@ -84,8 +84,8 @@ const buildCardGallery = (url, nama, jenis, tangal) => {
             <img src="${url}" alt="" class="w-full h-full object-cover">
             <div class="block md:absolute h-fit max-h-full bottom-0 w-full md:hidden">
                 <div class="detail-item p-2">
-                    <h1 class="text-xl md:text-3xl font-bold md:text-center">${nama}</h1>
-                    <p class="hidden md:block text-right cursor-pointer">click for more info</p>
+                    <h1 class="text-xl md:text-3xl font-bold md:text-center text-white">${nama}</h1>
+                    <p class="hidden md:block text-right cursor-pointer font-complementary">click for more info<span class="ml-4"><i class="fa-solid fa-angle-right"></i></span></p>
                 </div>
             </div>
         </div>
