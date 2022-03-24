@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @layer utilities{ .h-small { height: 22rem; } .h-mid { height: 26rem; } .h-big { height: 30rem; } }
+    </style>
     <!-- <script src="https://unpkg.com/magic-grid/dist/magic-grid.min.js"></script> -->
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
@@ -93,7 +96,7 @@
         </div>
 
         <div class="footer-sidebar grow flex items-end">
-            <button class="font-bold button-black  w-full p-2 rounded-lg">Apply Filter Settings</button>
+            <button class="font-bold button-black apply-button w-full p-2 rounded-lg">Apply Filter Settings</button>
         </div>
 
     </section>
@@ -159,14 +162,8 @@
             </section>
 
             <section class="info-gallery flex justify-between py-2 pl-4 md:pl-16 pr-8 md:pr-16">
-                <div>1 - 10 of 21 Gamelan</div>
-                <ul class="flex justify-between">
-                    <li class="mx-2 active">1</li>
-                    <li class="mx-2">2</li>
-                    <li class="mx-2">3</li>
-                    <li class="mx-2">4</li>
-                    <li class="mx-2">5</li>
-                </ul>
+                <div class="pagination-info">1 - 10 of 21 Gamelan</div>
+
             </section>
 
             <section class="gallery-content h-auto w-screen md:pl-16 pr-4 md:pr-16">

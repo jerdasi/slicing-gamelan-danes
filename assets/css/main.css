@@ -102,3 +102,15 @@ li {
     display: block;
     clear: both;
 }
+
+.h-small {
+    height: 18rem;
+}
+
+.h-mid {
+    height: 20rem;
+}
+
+.h-big {
+    height: 22rem;
+}
